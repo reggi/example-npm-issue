@@ -1,5 +1,7 @@
 # `example-npm-failure`
 
+> `npm` version `6.1.0`
+
 I have a monorepo here, I've stripped out the contents from each of the individual package, they don't seem to have any impact on the bug.
 
 The issue is that I am trying to start with nothing installed, and only install one package at the root of the this repo.
