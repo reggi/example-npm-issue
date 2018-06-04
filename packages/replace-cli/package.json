@@ -1,0 +1,74 @@
+{
+  "name": "replace-cli",
+  "version": "1.0.10",
+  "description": "Replace piped data using javascript regex",
+  "author": "Thomas Reggi",
+  "main": "./index.build.js",
+  "bin": {
+    "replace": "./index.build.js"
+  },
+  "scripts": {
+    "babel": "babel ./index.js --out-file ./index.build.js",
+    "babel:watch": "npm run babel -- --watch",
+    "jest": "jest --coverage",
+    "standard": "standard",
+    "test": "npm run standard && npm run jest"
+  },
+  "babel": {
+    "plugins": [
+      "transform-object-rest-spread"
+    ],
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "4"
+          }
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  },
+  "dependencies": {
+    "@reggi/command": "file:../command"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "jest": "^22.4.2",
+    "sinon": "^4.5.0",
+    "standard": "^11.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "index.build.js"
+    ],
+    "globals": [
+      "expect",
+      "test",
+      "beforeEach",
+      "afterEach"
+    ]
+  }
+}
